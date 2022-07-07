@@ -1,0 +1,27 @@
+@import '../../utils/style/colors.css';
+
+.error_wrapper {
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding-bottom: 90px;
+}
+
+.error_number {
+   font-size: 36px;
+   margin: 20px;
+   color: var(--secondary-color);
+}
+
+.error_description {
+   font-size: 20px;
+   font-weight: 400;
+   margin-bottom: 80px;
+}
+
+.error_homelink {
+   font-size: 18px;
+   color: var(--secondary-color);
+}
