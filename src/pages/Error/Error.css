@@ -1,4 +1,4 @@
-@import '../../utils/style/colors.css';
+@import '../../utils/style/globalVariables.css';
 
 .error_wrapper {
    box-sizing: border-box;

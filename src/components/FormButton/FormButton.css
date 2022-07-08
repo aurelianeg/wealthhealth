@@ -1,4 +1,4 @@
-@import '../../utils/style/colors.css';
+@import '../../utils/style/globalVariables.css';
 
 .form_button {
    margin: 10px;

@@ -1,4 +1,4 @@
-@import '../../utils/style/colors.css';
+@import '../../utils/style/globalVariables.css';
 
 .list_wrapper {
    display: flex;

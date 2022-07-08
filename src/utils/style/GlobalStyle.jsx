@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 
-   html, input, select {
+   html {
       font-family: Avenir, Arial, sans-serif;
    }
 
