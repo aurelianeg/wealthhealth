@@ -67,6 +67,7 @@ function CreateEmployee() {
                      id="state"
                      labelTitle="State"
                      selectOptions={states}
+                     selectAbbreviations={true}
                   />
                   <FormItem
                      type="input"
@@ -82,6 +83,7 @@ function CreateEmployee() {
                id="department"
                labelTitle="Department"
                selectOptions={departments}
+               selectAbbreviations={false}
             />
          </form>
 

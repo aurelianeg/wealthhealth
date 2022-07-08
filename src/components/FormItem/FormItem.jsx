@@ -22,10 +22,10 @@ function FormItem(props) {
             />
          ) : (
             <SelectInput
-               name={props.id}
                id={props.id}
                options={props.selectOptions}
-            /> /* !!!!! required */
+               abbreviations={props.selectAbbreviations}
+            />
          )}
       </div>
    );
@@ -37,6 +37,7 @@ FormItem.propTypes = {
    labelTitle: propTypes.string.isRequired,
    inputType: propTypes.string,
    selectOptions: propTypes.array,
+   selectAbbreviations: propTypes.bool,
 };
 
 export default FormItem;
