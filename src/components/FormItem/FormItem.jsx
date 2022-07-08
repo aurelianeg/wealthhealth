@@ -1,6 +1,6 @@
 import React from 'react';
-import Select from 'react-select';
 import propTypes from 'prop-types';
+import SelectInput from '../SelectInput/SelectInput';
 import './FormItem.css';
 
 /**
@@ -8,14 +8,6 @@ import './FormItem.css';
  * @returns { React.ReactElement } FormItem component
  */
 function FormItem(props) {
-   const options = [];
-   if (props.selectOptions) {
-      for (let i = 0; i < props.selectOptions.length; i++) {
-         let option = props.selectOptions[i];
-         options.push({ value: option.abbreviation, label: option.name });
-      }
-   }
-
    return (
       <div className="form_item">
          <label className="form_label" htmlFor={props.id}>
@@ -29,13 +21,11 @@ function FormItem(props) {
                required
             />
          ) : (
-            <Select
-               className="form_select"
+            <SelectInput
                name={props.id}
                id={props.id}
-               options={options}
-               required
-            />
+               options={props.selectOptions}
+            /> /* !!!!! required */
          )}
       </div>
    );

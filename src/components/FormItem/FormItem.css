@@ -62,29 +62,3 @@
 .form_input:invalid {
    color: var(--grey-color);
 }
-
-.form_select {
-   width: 28vw;
-
-   height: 35px;
-   font-size: 16px;
-}
-
-@media screen and (max-width: 768px) {
-   .form_select {
-      width: 57vw;
-   }
-}
-
-@media screen and (max-width: 425px) {
-   .form_select {
-      width: 100%;
-   }
-}
-
-.form_select:focus {
-   outline: none !important;
-   border-color: var(--primary-color);
-}
-
-/* !!!!! ADD STYLES TO SELECT WHEN PLUGIN IS CREATED */
