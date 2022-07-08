@@ -100,6 +100,10 @@
    border-bottom: 1px solid var(--light-grey-color);
 }
 
+.select_list_wrapper li:hover {
+   background-color: var(--light-grey-color);
+}
+
 .select_button--expanded ~ .select_list_wrapper {
    border: 1px solid var(--primary-color);
    overflow-y: scroll;
