@@ -68,10 +68,12 @@
 }
 
 .select_list_wrapper {
-   width: calc(100% - 2px);   
+   width: calc(100% - 2px);
+   max-height: 150px;
    background-color: white;
    border-radius: 3px;
-   overflow: hidden;
+   overflow-x: hidden;
+   overflow-y: hidden;
    position: absolute;
    top: 34px;
    left: 0;
@@ -100,6 +102,7 @@
 
 .select_button--expanded ~ .select_list_wrapper {
    border: 1px solid var(--primary-color);
+   overflow-y: scroll;
    z-index: 1;
 }
 

@@ -8,10 +8,8 @@ import './SelectInput.css';
  */
 function SelectInput(props) {
    const [isListExpanded, setListExpanded] = useState(false);
-   const [selectedOption, setSelectedOption] = useState(0);
+   const [selectedOption, setSelectedOption] = useState(props.options[0].name);
    const [optionTabIndex, setOptionTabIndex] = useState('-1');
-
-   const options = ['Option 1', 'Option 2', 'Option 3'];
 
    return (
       <div className="select_wrapper">
@@ -27,7 +25,7 @@ function SelectInput(props) {
                setOptionTabIndex(optionTabIndex === -1 ? 0 : -1);
             }}
          >
-            <p className="select_button_text">{options[selectedOption]}</p>
+            <p className="select_button_text">{selectedOption}</p>
             <span className="select_button_icon"></span>
          </button>
          <div
@@ -36,21 +34,21 @@ function SelectInput(props) {
             aria-expanded={isListExpanded}
          >
             <ul className="select_list">
-               {options.map((option, index) => (
+               {props.options.map((option, index) => (
                   <li
                      className="select_list_choice"
                      key={index}
-                     id={option}
+                     id={option.abbreviation}
                      role="option"
                      aria-selected={selectedOption === index}
                      tabIndex={optionTabIndex}
                      // When option clicked, set as the selected option and close the select after
                      onClick={() => {
-                        setSelectedOption(index);
+                        setSelectedOption(option.name);
                         setListExpanded(!isListExpanded);
                      }}
                   >
-                     {option}
+                     {option.name}
                   </li>
                ))}
             </ul>
@@ -60,7 +58,6 @@ function SelectInput(props) {
 }
 
 SelectInput.propTypes = {
-   className: propTypes.string.isRequired,
    name: propTypes.string.isRequired,
    id: propTypes.string.isRequired,
    options: propTypes.array.isRequired,
