@@ -5,7 +5,38 @@ import { configureStore } from "@reduxjs/toolkit";
 
 const initialState = {
    isModalShowing: false,
-   employees: ''
+   /* Test data to show a non-empty employee list table */
+   employees: [{
+      'firstName': 'Peter',
+      'lastName': 'Parker',
+      'dateOfBirth': '1962-08-10',
+      'startDate': '2002-05-03',
+      'street': '20 Ingram Street',
+      'city': 'Forest Hills',
+      'state': 'NY',
+      'zipCode': '11375',
+      'department': 'Engineering'
+   }, {
+      'firstName': 'Steve',
+      'lastName': 'Rogers',
+      'dateOfBirth': '1917-07-04',
+      'startDate': '2011-07-19',
+      'street': '569 Leaman Place',
+      'city': 'Brooklyn',
+      'state': 'NY',
+      'zipCode': '11201',
+      'department': 'Marketing'
+   }, {
+      'firstName': 'Stephen',
+      'lastName': 'Strange',
+      'dateOfBirth': '1930-11-18',
+      'startDate': '2016-10-13',
+      'street': '180 Bleecker Street',
+      'city': 'New York',
+      'state': 'NY',
+      'zipCode': '10012',
+      'department': 'Human Resources'
+   }]
 };
 
 
@@ -29,7 +60,7 @@ export function createEmployeeAction() {
       const zipCodeField = document.getElementById('zipCode');
       const departmentField = document.getElementById('department');
       const fields = [firstNameField, lastNameField, dateOfBirthField, startDateField,
-                      streetField, cityField, stateField, zipCodeField, departmentField]
+                      streetField, cityField, stateField, zipCodeField, departmentField];
 
       const firstName = firstNameField.value;
       const lastName = lastNameField.value;
@@ -41,7 +72,7 @@ export function createEmployeeAction() {
       const zipCode = zipCodeField.value;
       const department = departmentField.getAttribute("value");
       const values = [firstName, lastName, dateOfBirth, startDate,
-                      street, city, state, zipCode, department]
+                      street, city, state, zipCode, department];
 
       const employee = {
          'firstName': firstName,
@@ -59,10 +90,10 @@ export function createEmployeeAction() {
       for (let i=0; i < values.length; i++) {
          let errorMessage = fields[i].parentElement.lastChild;
          if (values[i] === '') {
-            errorMessage.classList.add('form_error_message--visible')
+            errorMessage.classList.add('form_error_message--visible');
          }
          else {
-            errorMessage.classList.remove('form_error_message--visible')
+            errorMessage.classList.remove('form_error_message--visible');
          }
       }
 
@@ -74,8 +105,8 @@ export function createEmployeeAction() {
       }
       // If all inputs are filled, launch confirmation modal and create a new employee
       if (isFormValid) {
-         dispatch(toggleModalAction())
-         dispatch(createEmployeeSuccessAction(employee))
+         dispatch(toggleModalAction());
+         dispatch(createEmployeeSuccessAction(employee));
          // Empty fields after submitting form
          for (let field of fields) {
             field.value = ''
