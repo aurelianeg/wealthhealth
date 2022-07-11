@@ -3,13 +3,14 @@ import propTypes from 'prop-types';
 import './SelectInput.css';
 
 /**
- * React component to create a custom select
+ * React component to create a custom select dropdown
+ * @param { {id: String, options: Array, abbreviations: Boolean} } props - id: select id, options: array of selectable options, abbreviations: true if options are objects with name and abbreviation properties / false if option array is simple
  * @returns { React.ReactElement } SelectInput component
  */
 function SelectInput(props) {
    // If the array of options has objects with abbreviations, get only the name
    // as title and only the abbreviation as value (saved in Redux).
-   // This allows to have only a simple array as options too.
+   // This allows to have only a simple array as 'options' too.
 
    const [isListExpanded, setListExpanded] = useState(false);
    const [selectedOptionTitle, setSelectedOptionTitle] = useState(
@@ -39,6 +40,7 @@ function SelectInput(props) {
                className="select_button_text"
                id={props.id}
                // Create an attribute "value" to easily get the wanted string
+               // (which can be different than the text title)
                value={selectedOptionValue}
             >
                {selectedOptionTitle}

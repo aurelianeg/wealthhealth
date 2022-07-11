@@ -5,6 +5,7 @@ import './FormItem.css';
 
 /**
  * React component to create a form item with an input or a select
+ * @param { {type: String, id: String, labelTitle: String, inputType: String, selectOptions: Array, selectAbbreviations: Boolean} } props - type: 'input' or 'select', id: input id, labelTitle: label text, inputType: "date", "text", etc., selectOptions: array of options, selectAbbreviations: true if options are objects with name and abbreviation properties / false if option array is simple
  * @returns { React.ReactElement } FormItem component
  */
 function FormItem(props) {

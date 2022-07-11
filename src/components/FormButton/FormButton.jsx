@@ -6,6 +6,7 @@ import './FormButton.css';
 
 /**
  * React component to create a form submit button
+ * @param { {title: String} } props - title: button title text
  * @returns { React.ReactElement } FormButton component
  */
 function FormButton(props) {
