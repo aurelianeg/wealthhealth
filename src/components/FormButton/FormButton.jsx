@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { toggleModalAction } from '../../scripts/store';
+import { createEmployeeAction, toggleModalAction } from '../../scripts/store';
 import './FormButton.css';
 
 /**
@@ -16,7 +16,11 @@ function FormButton(props) {
          className="form_button"
          onClick={(e) => {
             e.preventDefault();
-            dispatch(toggleModalAction());
+            if (props.title === 'Save') {
+               dispatch(createEmployeeAction());
+            } else {
+               dispatch(toggleModalAction());
+            }
          }}
       >
          <h3 className="form_button_text">{props.title}</h3>

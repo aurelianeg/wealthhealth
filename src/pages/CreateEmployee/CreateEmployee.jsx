@@ -70,7 +70,7 @@ function CreateEmployee() {
                <div className="create_form_container create_form_container--bottom">
                   <FormItem
                      type="select"
-                     id="stateAddress"
+                     id="state"
                      labelTitle="State"
                      selectOptions={states}
                      selectAbbreviations={true}

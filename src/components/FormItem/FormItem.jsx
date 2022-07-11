@@ -13,20 +13,25 @@ function FormItem(props) {
          <label className="form_label" htmlFor={props.id}>
             {props.labelTitle}
          </label>
-         {props.type === 'input' ? (
-            <input
-               className="form_input"
-               type={props.inputType}
-               id={props.id}
-               required
-            />
-         ) : (
-            <SelectInput
-               id={props.id}
-               options={props.selectOptions}
-               abbreviations={props.selectAbbreviations}
-            />
-         )}
+         <div className="form_input_message_wrapper">
+            {props.type === 'input' ? (
+               <input
+                  className="form_input"
+                  type={props.inputType}
+                  id={props.id}
+                  required
+               />
+            ) : (
+               <SelectInput
+                  id={props.id}
+                  options={props.selectOptions}
+                  abbreviations={props.selectAbbreviations}
+               />
+            )}
+            <span className="form_error_message">
+               Please fill out this field.
+            </span>
+         </div>
       </div>
    );
 }
