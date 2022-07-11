@@ -6,6 +6,11 @@
    background-color: var(--primary-color);
    border-radius: 5px;
    border: none;
+   cursor: pointer;
+}
+
+.form_button:hover {
+   background-color: var(--secondary-color);
 }
 
 .form_button_text {

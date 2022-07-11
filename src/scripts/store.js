@@ -4,18 +4,17 @@ import { configureStore } from "@reduxjs/toolkit";
 // --------------- STATE INITIALIZATION ---------------
 
 const initialState = {
-   employees: ''
+   isModalShowing: false
 };
 
 
 // --------------- ACTIONS ---------------
 
-export function createEmployeeAction() {
+export function toggleModalAction() {
    return {
-      type: "CREATE_EMPLOYEE_ACTION"
+      type: "TOGGLE_MODAL_ACTION"
    }
 }
-
 
 // --------------- REDUCER ---------------
 
@@ -27,10 +26,10 @@ export function createEmployeeAction() {
  */
 function reducer(state = initialState, action) {
    switch (action.type) {
-      case "CREATE_EMPLOYEE_ACTION": {
+      case "TOGGLE_MODAL_ACTION": {
          return {
             ...state,
-            employees: 'yeah'
+            isModalShowing: !state.isModalShowing
          }
       }
       default:
