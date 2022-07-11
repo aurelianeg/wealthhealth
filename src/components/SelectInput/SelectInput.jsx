@@ -10,12 +10,14 @@ import './SelectInput.css';
 function SelectInput(props) {
    // If the array of options has objects with abbreviations, get only the name
    // as title and only the abbreviation as value (saved in Redux).
-   // This allows to have only a simple array as 'options' too.
+   // This allows to have a simple array (no objects) as 'options' too.
 
    const [isListExpanded, setListExpanded] = useState(false);
+   // Set first option in array as displayed option
    const [selectedOptionTitle, setSelectedOptionTitle] = useState(
       props.abbreviations ? props.options[0].name : props.options[0]
    );
+   // Set first option in array as displayed option value
    const [selectedOptionValue, setSelectedOptionValue] = useState(
       props.abbreviations ? props.options[0].abbreviation : props.options[0]
    );
@@ -56,6 +58,7 @@ function SelectInput(props) {
             <ul className="select_list">
                {props.options.map((option) => (
                   // Create a list element for each option in array
+                  // (aria-selected to know if option is selected)
                   <li
                      className="select_list_choice"
                      key={props.abbreviations ? option.name : option}
@@ -65,7 +68,7 @@ function SelectInput(props) {
                         (props.abbreviations ? option.name : option)
                      }
                      tabIndex={optionTabIndex}
-                     // If clicked, set title and value and hide the options list
+                     // If option selected/clicked, update selected title and value and hide the options list
                      onClick={() => {
                         setSelectedOptionTitle(
                            props.abbreviations ? option.name : option
