@@ -1,4 +1,5 @@
 # Wealth Health - HRnet
+
 This new version of HRnet application allows to create new employees and see the list of all created employees.
 
 ## Prerequisites
@@ -14,6 +15,7 @@ This new version of HRnet application allows to create new employees and see the
 -  [Redux Toolkit](https://redux-toolkit.js.org/) v1.8.2
 -  [PropTypes](https://www.npmjs.com/package/prop-types) v15.8.1
 -  [StyledComponents](https://www.npmjs.com/package/styled-components) v5.3.5
+-  [@aurelianeg React Select Input](https://www.npmjs.com/package/@aurelianeg/react-select-input) v0.1.0
 
 ## Installation and launch
 
