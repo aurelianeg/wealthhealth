@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import SelectInput from '../SelectInput/SelectInput';
+import SelectInput from '@aurelianeg/react-select-input';
 import './FormItem.css';
 
 /**
