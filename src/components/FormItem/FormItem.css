@@ -64,10 +64,6 @@
    border-color: var(--primary-color);
 }
 
-.form_input:invalid {
-   color: var(--grey-color);
-}
-
 .form_error_message {
    box-sizing: border-box;
    width: 100%;

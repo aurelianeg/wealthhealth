@@ -16,7 +16,7 @@ function Header() {
          </Link>
          <nav className="nav">
             <Link className="nav_item" to="/employee-list">
-               <h3 className="nav_item_text">View current employees</h3>
+               <h2 className="nav_item_text">View current employees</h2>
             </Link>
          </nav>
       </header>
