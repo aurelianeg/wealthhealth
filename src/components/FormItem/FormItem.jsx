@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import SelectInput from '@aurelianeg/react-select-input';
+import Select from '@aurelianeg/react-select';
 import './FormItem.css';
 
 /**
@@ -23,7 +23,7 @@ function FormItem(props) {
                   required
                />
             ) : (
-               <SelectInput
+               <Select
                   id={props.id}
                   options={props.selectOptions}
                   abbreviations={props.selectAbbreviations}
