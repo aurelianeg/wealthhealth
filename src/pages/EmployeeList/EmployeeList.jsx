@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DataTable from 'react-data-table-component';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -100,16 +100,47 @@ function EmployeeList() {
       },
    };
 
+   // Filter employees with search bar
+   const [searchText, setSearchText] = useState('');
+
+   const toggleSearch = (e) => {
+      setSearchText(e.target.value);
+   };
+
+   const filteredEmployees = [];
+   for (let employee of employees) {
+      // If search text is included in at least one of the employee properties, isSearchInEmployeeValues is true
+      // and the employee is added to the filtered employees
+      let isSearchInEmployeeValues = Object.values(employee).some((value) =>
+         value.toLowerCase().includes(searchText)
+      );
+      if (isSearchInEmployeeValues) {
+         filteredEmployees.push(employee);
+      }
+   }
+
    return (
       <main className="list_wrapper">
          <h2 className="list_title">- Current Employees -</h2>
+         <div className="list_search_wrapper">
+            <label className="list_search_label" htmlFor="list_search_input">
+               Search:
+            </label>
+            <input
+               className="list_search_input"
+               type="text"
+               id="list_search_input"
+               onChange={toggleSearch}
+            />
+         </div>
          <DataTable
             className="list_table"
             columns={tableColumns}
-            data={employees}
+            data={searchText === '' ? employees : filteredEmployees}
             striped={true}
             highlightOnHover={true}
             customStyles={listTableStyles}
+            pagination={true}
          />
          <Link className="list_link" to="/">
             Home
