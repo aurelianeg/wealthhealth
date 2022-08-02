@@ -2,7 +2,7 @@
 
 Wealth Health[^1] is a application to handle employee records. New employees can be created, and the list of all previously created employees is available.
 
-**Goal of this project**: App conversion from jQuery to React, npm package creation, .
+**Goal of this project**: App conversion from jQuery to React, npm package creation, and use of Redux.
 
 ## Load specifications
 
